@@ -10,6 +10,9 @@ export default class ArrayBufferConverter {
   }
 
   toString() {
-    return new TextDecoder().decode(this.buffer);
+    const string = String.fromCharCode.apply(null, new Uint16Array(this.buffer));
+    if (Object.prototype.toString.call(string) === '[object String]') {
+      return string;
+    } throw new Error('Ошибка');
   }
 }
