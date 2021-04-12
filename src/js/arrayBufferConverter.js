@@ -11,8 +11,6 @@ export default class ArrayBufferConverter {
 
   toString() {
     const string = String.fromCharCode.apply(null, new Uint16Array(this.buffer));
-    if (Object.prototype.toString.call(string) === '[object String]') {
-      return string;
-    } throw new Error('Ошибка');
+    return string;
   }
 }
