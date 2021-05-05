@@ -10,7 +10,7 @@ export default class ArrayBufferConverter {
   }
 
   toString() {
-    const string = String.fromCharCode.apply(null, new Uint16Array(this.buffer));
+    const string = String.fromCharCode(...new Uint16Array(this.buffer));
     return string;
   }
 }
